@@ -1,34 +1,33 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Routes ,Route } from 'react-router-dom' /* para las rutas */
 import './App.css'
+import {Menubar} from 'primereact/menubar'
+
+/* aqui importamos los contenedores */
+import Home from './components/Home'
 
 function App() {
-  const [count, setCount] = useState(0)
+  /* creo el navbar */
+  const items = [
+    {label:'Home', icon:'pi pi-home', url:'/'},
+    {label:'Celulares', icon:'pi pi-phone', url:'/celulares'},
+  ]
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <BrowserRouter>
+    <Menubar model={items}/> {/* menu inicial */}
+
+    <Routes>
+      <Route path='/' element={<Home/>} />
+      <Route path='/usuarios' element={<UsersContainer/>} />
+      <Route path='/marcas' element={<MarcasContainer/>} />
+      <Route path='/modelos' element={<ModelosContainer/>} />
+      <Route path='/fabricantes' element={<FabricantesContainer/>} />
+      <Route path='/proveedores' element={<ProveedoresContainer/>} />
+      <Route path='/celulares' element={<CelularesContainer/>} />
+    </Routes>
+
+    </BrowserRouter>
   )
 }
 
