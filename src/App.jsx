@@ -3,6 +3,10 @@ import { BrowserRouter, Routes ,Route } from 'react-router-dom' /* para las ruta
 import './App.css'
 import {Menubar} from 'primereact/menubar'
 
+/* aqui importo el login y create */
+import LoginUser from './components/users/LoginUsers'
+import CreateUser from './components/users/CreateUsers'
+
 /* aqui importamos los contenedores */
 import Home from './components/Home'
 
@@ -10,6 +14,9 @@ function App() {
   /* creo el navbar */
   const items = [
     {label:'Home', icon:'pi pi-home', url:'/'},
+    {label:'Marcas', icon:'pi pi-tag', url:'/marcas'},
+    {label:'Modelos', icon:'pi pi-objects-column', url:'/modelos'},
+    {label:'Proveedores', icon:'pi pi-truck', url:'/proveedores'},
     {label:'Celulares', icon:'pi pi-phone', url:'/celulares'},
   ]
 
@@ -25,6 +32,8 @@ function App() {
       <Route path='/fabricantes' element={<FabricantesContainer/>} />
       <Route path='/proveedores' element={<ProveedoresContainer/>} />
       <Route path='/celulares' element={<CelularesContainer/>} />
+      <Route path='/inicio-sesion' element={<LoginUser/>} />
+      <Route path='/nuevo-usuario' element={<CreateUser/>} />
     </Routes>
 
     </BrowserRouter>
