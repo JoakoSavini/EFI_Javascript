@@ -1,10 +1,10 @@
-import {ProgressSpiner } from "primereact/progressspinner"
+import {ProgressSpinner } from "primereact/progressspinner"
 import { Fragment } from "react"
 
 const ProvView = ({loadingProv, dataProv}) => {
     return (
         <Fragment>
-            {loadingProv ? <ProgressSpiner/> : dataProv.map((prov) => (
+            {loadingProv ? <ProgressSpinner/> : dataProv.map((prov) => (
                 <div key={prov.id}>
                     <h2>Nombre: {prov.nombre}</h2>
                     <h3>Localidad: {prov.localidad}</h3>

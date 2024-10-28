@@ -1,10 +1,10 @@
-import {ProgressSpiner } from "primereact/progressspinner"
+import {ProgressSpinner } from "primereact/progressspinner"
 import { Fragment } from "react"
 
 const CelView = ({loadingCel, dataCel}) => {
     return (
         <Fragment>
-            {loadingCel ? <ProgressSpiner/> : dataCel.map((cel) => (
+            {loadingCel ? <ProgressSpinner/> : dataCel.map((cel) => (
                 <div key={cel.id}>
                     <h2>Nombre: {cel.nombre}</h2>
                     <p>Usado: {cel.usado ? "Sí" : "No"}</p>

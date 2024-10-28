@@ -9,6 +9,13 @@ import CreateUser from './components/users/CreateUsers'
 
 /* aqui importamos los contenedores */
 import Home from './components/Home'
+import UsersContainer from './components/users/UsersContainer'
+import MarcasContainer from './components/marcas/MarcasContainer'
+import ModelosContainer from './components/modelos/ModelosContainer'
+import ProveedoresContainer from './components/proveedores/ProvContainer'
+import FabricantesContainer from './components/fabricantes/FabContainer'
+import CelularesContainer from './components/celulares/CelContainer'
+
 
 function App() {
   /* creo el navbar */
