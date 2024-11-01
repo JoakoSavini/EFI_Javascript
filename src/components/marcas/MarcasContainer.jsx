@@ -7,7 +7,7 @@ const MarcasContainer = () => {
 
     const getDataBrand = async () => {
         try {
-            const response = await fetch("https://localhost:5000/marcas");
+            const response = await fetch("http://localhost:5000/marcas");
             console.log("response", response);
             if (!response.ok) {
                 console.log("Hubo un error en la petición");

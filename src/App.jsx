@@ -21,6 +21,7 @@ function App() {
   /* creo el navbar */
   const items = [
     {label:'Home', icon:'pi pi-home', url:'/'},
+    {label:'Usuarios', icon:'pi pi-user', url:'/usuarios'},
     {label:'Marcas', icon:'pi pi-tag', url:'/marcas'},
     {label:'Modelos', icon:'pi pi-objects-column', url:'/modelos'},
     {label:'Proveedores', icon:'pi pi-truck', url:'/proveedores'},

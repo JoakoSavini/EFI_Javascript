@@ -35,7 +35,7 @@ const UsersView = ({ loadingUsers, dataUsers }) => {
     
     const bodyIsAdmin = (rowData) => {
         return (
-            rowData.idAdmin ? 
+            rowData.isAdmin ? 
                 <span>Administrador</span> :
                 <span>Usuario</span>
         );
