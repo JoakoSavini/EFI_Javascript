@@ -1,17 +1,16 @@
-import {ProgressSpinner } from "primereact/progressspinner"
-import { Fragment } from "react"
+import { ProgressSpinner } from "primereact/progressspinner";
+import { Fragment } from "react";
 
-const MarcaView = ({loadingMarca, dataMarca}) => {
+const MarcaView = ({ loadingBrand, dataBrand }) => {
     return (
         <Fragment>
-            {loadingMarca ? <ProgressSpinner/> : dataMarca.map((marca) => (
+            {loadingBrand ? <ProgressSpinner /> : dataBrand.map((marca) => (
                 <div key={marca.id}>
                     <h2>Nombre: {marca.nombre}</h2>
                 </div>
-            
-            )) }
+            ))}
         </Fragment>
-    )
-}
+    );
+};
 
-export default MarcaView
+export default MarcaView;

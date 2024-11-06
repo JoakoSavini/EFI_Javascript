@@ -12,7 +12,6 @@ const CelView = ({loadingCel, dataCel}) => {
                         <p>Proveedor: {cel.proveedor}</p>
                         <p>Especificación: {cel.especificacion}</p>
                         <p>Modelo: {cel.modelo}</p>
-                        <p>Categoría: {cel.categoria}</p>
                         <p>Gama: {cel.gama}</p>
                         <p>Sistema Operativo: {cel.sistema_operativo}</p>
                 </div>
