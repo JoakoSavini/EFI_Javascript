@@ -15,7 +15,7 @@ import CelularesContainer from './components/celulares/CelContainer'
 
 function App() {
   /* creo el navbar */
-  const token = localStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMTAxOTEwOSwianRpIjoiZjc0MTcxODktMTMwNi00ZWU4LThjNTYtMmFhNGJjZmMxZmViIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImFkbWluIiwibmJmIjoxNzMxMDE5MTA5LCJjc3JmIjoiY2Q3NzRhZmItYTBhYS00MzM1LWFiYTgtODg0NDQ3ZTAwMmZkIiwiZXhwIjoxNzMxMDIwMzA5LCJhZG1pbmlzdHJhZG9yIjp0cnVlfQ.VW0IGpUra2i5veIYGcNUgZNpiDAGWWtfP3rBFX0Y4yc')
+  const token = localStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMTAyMTYyMiwianRpIjoiM2E0MjgzM2QtYjE5YS00NjFiLTgxYWItYmFkYTc3MzgwN2RhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImFkbWluIiwibmJmIjoxNzMxMDIxNjIyLCJjc3JmIjoiYzZkYjdiNWUtZjE5OS00ZWRjLTgxNmUtMWRiMTY0YjExYjhlIiwiZXhwIjoxNzMxMDIyODIyLCJhZG1pbmlzdHJhZG9yIjp0cnVlfQ.oRAGOvYUaiBL12_ILIV_7GcKp4v_jYgV_kGe-Ys6y9o')
 
   const items = [
     {label:'Home', icon:'pi pi-home', url:'/'},

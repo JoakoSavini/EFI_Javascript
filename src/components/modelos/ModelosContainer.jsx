@@ -39,7 +39,7 @@ const ModelosContainer = () => {
     }, []);
 
     return (
-        <ModelView loadingModel={loadingModel} dataModel={dataModel} />
+        <ModelView loadingModel={loadingModel} dataModel={dataModel} getDataModel={getDataModel} />
     );
 };
 

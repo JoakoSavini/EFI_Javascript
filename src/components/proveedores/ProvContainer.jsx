@@ -37,7 +37,7 @@ const ProveedoresContainer = () => {
     }, []);
 
     return (
-        <ProvView loadingProv={loadingProv} dataProv={dataProv} />
+        <ProvView loadingProv={loadingProv} dataProv={dataProv} getDataProv={getDataProv}/>
     );
 };
 
