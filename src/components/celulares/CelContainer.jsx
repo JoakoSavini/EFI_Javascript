@@ -19,7 +19,7 @@ const CelularesContainer = () => {
 
             console.log("response", response);
             if (!response.ok) {
-                console.log("Hubo un error en la petición");
+                console.log("Hubo un error en la peticiÃ³n");
             }
 
             const results = await response.json();
@@ -38,7 +38,7 @@ const CelularesContainer = () => {
     }, []);
 
     return (
-        <CelularView loadingCel={loadingCel} dataCel={dataCel} />
+        <CelularView loadingCel={loadingCel} dataCel={dataCel} getDataCel={getDataCel} />
     );
 };
 

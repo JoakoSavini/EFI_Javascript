@@ -38,7 +38,7 @@ const FabricantesContainer = () => {
     }, []);
 
     return (
-        <FabView loadingFab={loadingFab} dataFab={dataFab} />
+        <FabView loadingFab={loadingFab} dataFab={dataFab} getDataFab={getDataFab} />
     );
 };
 
