@@ -1,6 +1,8 @@
 import {ProgressSpinner } from "primereact/progressspinner"
 import { Fragment } from "react"
 
+
+
 const ProvView = ({loadingProv, dataProv}) => {
     return (
         <Fragment>

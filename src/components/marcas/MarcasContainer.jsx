@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import MarcaView from './MarcasView';
+import { useState, useEffect, Fragment } from 'react';
+import MarcasView from "./MarcasView"
 
 const MarcasContainer = () => {
     const [dataBrand, setDataBrand] = useState([]),
@@ -8,7 +8,7 @@ const MarcasContainer = () => {
     const getDataBrand = async () => {
         try {
             const token = localStorage.getItem('token'); // Recupera el token del Local Storage
-
+            
             const response = await fetch("http://localhost:5000/marcas", {
                 method: "GET",
                 headers: {
@@ -16,16 +16,22 @@ const MarcasContainer = () => {
                     "Authorization": `Bearer ${token}` // Agrega el token en el encabezado
                 }
             });
-
             console.log("response", response);
+
             if (!response.ok) {
                 console.log("Hubo un error en la petición");
+                return;
             }
 
             const results = await response.json();
-            setDataBrand(results);
+            // Asegúrate de que results sea un array
+            if (Array.isArray(results)) {
+                setDataBrand(results);
+            } else {
+                console.log("La respuesta no es un array", results);
+            }
         } catch (error) {
-            console.log("Hubo un error en la api ", error);
+            console.log("Hubo un error en la API ", error);
         } finally {
             setLoadingBrand(false);
         }
@@ -38,7 +44,7 @@ const MarcasContainer = () => {
     }, []);
 
     return (
-        <MarcaView loadingBrand={loadingBrand} dataBrand={dataBrand} />
+        <MarcasView loadingBrand={loadingBrand} dataBrand={dataBrand} getDataBrand={getDataBrand} />
     );
 };
 
