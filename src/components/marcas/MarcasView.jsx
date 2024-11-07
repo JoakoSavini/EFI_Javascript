@@ -11,11 +11,11 @@ const MarcasView = ({ loadingBrand, dataBrand, getDataBrand }) => {
     const toast = useRef(null);
     
     const accept = () => {
-        toast.current.show({ severity: 'success', summary: 'Eliminación completada', detail: 'Marca eliminada correctamente', life: 3000 });
+        toast.current.show({ severity: 'success', summary: 'Acción completada', detail: 'Marca eliminada Acción', life: 3000 });
     };
 
     const reject = () => {
-        toast.current.show({ severity: 'warn', summary: 'Eliminación rechazada', detail: 'Se ha cancelado la eliminación', life: 3000 });
+        toast.current.show({ severity: 'warn', summary: 'Acción rechazada', detail: 'Se ha cancelado la Acción', life: 3000 });
     };
 
     const deleteBrand = async (marcaId) => {
