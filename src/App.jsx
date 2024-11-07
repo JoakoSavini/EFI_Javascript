@@ -24,7 +24,8 @@ function App() {
     {label:'Usuarios', icon:'pi pi-user', url:'/usuarios'},
     {label:'Marcas', icon:'pi pi-tag', url:'/marcas'},
     {label:'Modelos', icon:'pi pi-objects-column', url:'/modelos'},
-    {label:'Proveedores', icon:'pi pi-truck', url:'/proveedores'},
+    {label:'Fabricantes', icon:'pi pi-truck', url:'/fabricantes'},
+    {label:'Proveedores', icon:'pi pi-cart-plus', url:'/proveedores'},
     {label:'Celulares', icon:'pi pi-phone', url:'/celulares'},
   ]
 
@@ -40,8 +41,6 @@ function App() {
       <Route path='/fabricantes' element={<FabricantesContainer/>} />
       <Route path='/proveedores' element={<ProveedoresContainer/>} />
       <Route path='/celulares' element={<CelularesContainer/>} />
-      <Route path='/inicio-sesion' element={<LoginUser/>} />
-      <Route path='/nuevo-usuario' element={<CreateUser/>} />
     </Routes>
 
     </BrowserRouter>

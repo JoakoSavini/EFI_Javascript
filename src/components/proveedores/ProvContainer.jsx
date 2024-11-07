@@ -7,7 +7,15 @@ const ProveedoresContainer = () => {
 
     const getDataProv = async () => {
         try {
-            const response = await fetch("https://localhost:5000/proveedores");
+            const token = localStorage.getItem('token'); // Recupera el token del Local Storage
+            
+            const response = await fetch("http://localhost:5000/proveedores", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}` // Agrega el token en el encabezado
+                }
+            });
             console.log("response", response);
             if (!response.ok) {
                 console.log("Hubo un error en la petición");

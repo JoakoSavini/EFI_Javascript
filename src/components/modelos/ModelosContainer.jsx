@@ -7,7 +7,17 @@ const ModelosContainer = () => {
 
     const getDataModel = async () => {
         try {
-            const response = await fetch("https://localhost:5000/modelos");
+            const token = localStorage.getItem('token'); // Recupera el token del Local Storage
+
+            const response = await fetch("http://localhost:5000/modelos", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}` // Agrega el token en el encabezado
+                }
+            });
+
+            
             console.log("response", response);
             if (!response.ok) {
                 console.log("Hubo un error en la petición");

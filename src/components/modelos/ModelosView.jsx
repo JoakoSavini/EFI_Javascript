@@ -5,7 +5,7 @@ const ModelView = ({loadingModel, dataModel}) => {
     return (
         <Fragment>
             {loadingModel ? <ProgressSpinner/> : dataModel.map((model) => (
-                <div key={prov.id}>
+                <div key={model.id}>
                     <h2>Nombre: {model.nombre}</h2>
                     <h2>Marca: {model.marca.nombre}</h2>
                 </div>
