@@ -3,10 +3,6 @@ import { BrowserRouter, Routes ,Route } from 'react-router-dom' /* para las ruta
 import './App.css'
 import {Menubar} from 'primereact/menubar'
 
-/* aqui importo el login y create */
-import LoginUser from './components/users/LoginUsers'
-import CreateUser from './components/users/CreateUsers'
-
 /* aqui importamos los contenedores */
 import Home from './components/Home'
 import UsersContainer from './components/users/UsersContainer'
