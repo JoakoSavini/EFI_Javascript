@@ -15,7 +15,6 @@ import CelularesContainer from './components/celulares/CelContainer'
 
 function App() {
   /* creo el navbar */
-  const token = localStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTczMTAyMzI0MSwianRpIjoiZjU1MGYzYTQtZjAzNC00ZWRjLWFkMzMtZTc0ZjJjZmRlY2FhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImFkbWluIiwibmJmIjoxNzMxMDIzMjQxLCJjc3JmIjoiYWM4M2I3N2EtNGViZS00NGJiLTllYTktOGZhNjRhMTU1MmM4IiwiZXhwIjoxNzMxMDI0NDQxLCJhZG1pbmlzdHJhZG9yIjp0cnVlfQ.tRAYIrGSVADqYvmtw1i5pvO45IpA1AiFJdAjCbvLqJk')
 
   const items = [
     {label:'Home', icon:'pi pi-home', url:'/'},

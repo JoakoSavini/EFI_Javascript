@@ -1,11 +1,13 @@
 import React, { useState, Fragment } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
 
     // Manejar el envío del formulario
     const handleLogin = async () => {
@@ -18,12 +20,14 @@ const Home = () => {
                 body: JSON.stringify({ username, password }),
                 mode: 'cors'
             });
-
+    
             if (response.ok) {
                 const data = await response.json();
                 // Almacenar el token recibido
-                localStorage.setItem('token', data.token);
+                localStorage.setItem('token', data.token); // usa data.token en lugar de data.Token
                 console.log("Login exitoso, token recibido:", data.token);
+
+                navigate('/usuarios');
             } else {
                 setErrorMessage("Usuario o contraseña incorrectos.");
             }
@@ -31,6 +35,7 @@ const Home = () => {
             setErrorMessage("Hubo un error al intentar conectarse con el servidor.");
         }
     };
+    
     
     return (
         <Fragment>    
