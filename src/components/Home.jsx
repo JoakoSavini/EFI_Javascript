@@ -1,12 +1,72 @@
-import { Fragment } from "react"
+import React, { useState, Fragment } from 'react';
+import { InputText } from 'primereact/inputtext';
+import { Button } from 'primereact/button';
 
 const Home = () => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
+    // Manejar el envío del formulario
+    const handleLogin = async () => {
+        try {
+            const response = await fetch('http://localhost:5000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password }),
+                mode: 'cors'
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                // Almacenar el token recibido
+                localStorage.setItem('token', data.token);
+                console.log("Login exitoso, token recibido:", data.token);
+            } else {
+                setErrorMessage("Usuario o contraseña incorrectos.");
+            }
+        } catch (error) {
+            setErrorMessage("Hubo un error al intentar conectarse con el servidor.");
+        }
+    };
+    
     return (
-        <Fragment>
-            <h1>EFI de Javascript</h1>
-            <h3>Consumo de API generada en Python</h3>
+        <Fragment>    
+            <div className="card">
+                <div className="w-full md:w-5 flex flex-column align-items-center justify-content-center gap-3 py-5">
+                    <div className="flex flex-wrap justify-content-center align-items-center gap-2">
+                        <label className="w-6rem">Username</label>
+                        <InputText 
+                            id="username" 
+                            type="text" 
+                            value={username} 
+                            onChange={(e) => setUsername(e.target.value)}
+                            className="w-12rem" 
+                        />
+                    </div>
+                    <div className="flex flex-wrap justify-content-center align-items-center gap-2">
+                        <label className="w-6rem">Password</label>
+                        <InputText 
+                            id="password" 
+                            type="password" 
+                            value={password} 
+                            onChange={(e) => setPassword(e.target.value)}
+                            className="w-12rem" 
+                        />
+                    </div>
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
+                    <Button 
+                        label="Login" 
+                        icon="pi pi-user" 
+                        className="w-10rem mx-auto"
+                        onClick={handleLogin} 
+                    />
+                </div>
+            </div>
         </Fragment>
-    )
+        )
 }
 
 export default Home
